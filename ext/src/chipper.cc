@@ -61,7 +61,7 @@ void remove(char *string, const char *pattern) {
     char *sanitized = (char *)malloc(strlen(string) + 1), *src = string, *dst = sanitized;
 
     while (*src) {
-        if (memcmp(src, pattern, width) == 0)
+        if (strncmp(src, pattern, width) == 0)
             src += width;
         else
             *dst++ = *src++;
